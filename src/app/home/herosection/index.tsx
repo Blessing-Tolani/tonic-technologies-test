@@ -57,8 +57,8 @@ export default function HeroSection() {
       <div className="px-5 md:px-10 mt-20  md:mt-[5.94rem]">
         <MarqueesSlider speed={50}>
           <div className="flex items-center ml-10 overflow-y-hidden  gap-x-4 md:gap-x-14 ">
-            {TRUSTEES.map((item) => (
-              <div className="flex items-center gap-x-2.5">
+            {TRUSTEES.map((item, index) => (
+              <div className="flex items-center gap-x-2.5" key={index}>
                 <Image src={item.logo} alt="" />
                 <h1 className="text-primary font-bold text-3xl font-manrope">
                   {item.name}
