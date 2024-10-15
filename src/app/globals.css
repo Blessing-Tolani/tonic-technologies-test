@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+h2 {
+  font-family: 'Manrope', 'ui-sans-serif', 'system-ui';
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@font-face {
+  font-family: 'Manrope';
+  font-weight: 400;
+  src: url('/fonts/Manrope-VariableFont_wght.ttf') format('opentype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  font-weight: 700;
+  src: url('/fonts/Manrope-VariableFont_wght.ttf') format('opentype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Opensans';
+  font-weight: 400;
+  src: url('/fonts/OpenSans-VariableFont_wdth\,wght.ttf') format('opentype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Opensans';
+  font-weight: 600;
+  src: url('/fonts/OpenSans-VariableFont_wdth\,wght.ttf') format('opentype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Opensans';
+  font-weight: 700;
+  src: url('/fonts/OpenSans-VariableFont_wdth\,wght.ttf') format('opentype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Worksans';
+  font-weight: 700;
+  src: url('/public/fonts/WorkSans-VariableFont_wght.ttf') format('opentype');
+  font-display: swap;
+}
