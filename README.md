@@ -1,4 +1,4 @@
-This is Boldo Template Landing Page
+Boldo Template Landing Page
 
 ## Getting Started
 
