@@ -1,13 +1,23 @@
+'use client'
 import FilledButton from '@/components/common/buttons/filled'
 import OutlinedButton from '@/components/common/buttons/outlined'
 import Header from '@/components/layout/header'
 import MarqueesSlider from '@/components/marquee-slider'
+import useIntersectionObserver from '@/utils'
+import { useRef } from 'react'
+import HeroGraphics from '/public/assets/images/hero-section/hero-graphics.png'
+import Image from 'next/image'
+import { TRUSTEES } from '@/constants'
+import Ellipse from '/public/assets/images/hero-section/ellipse.png'
 
 export default function HeroSection() {
+  const ref = useRef<HTMLDivElement>(null)
+  const { hasAppeared: isImageOnScreen } = useIntersectionObserver(ref, 0.25)
+
   return (
-    <section className="bg-white relative px-6 md:px-10  pb-[4.69rem]  lg:px-[6.25rem]">
-      <img
-        src="/assets/images/hero-section/ellipse.png"
+    <section className="bg-white relative px-6 md:px-10  pb-20  lg:px-[6.25rem]">
+      <Image
+        src={Ellipse}
         alt=""
         className="absolute top-0 right-0 z-10 lgMax:hidden"
       />
@@ -33,63 +43,28 @@ export default function HeroSection() {
             />
           </div>
         </div>
-        <img
-          src="assets/images/hero-section/hero-graphics.png"
-          alt=""
-          className="z-20 lgMax:mt-10"
-        />
+        <div
+          ref={ref}
+          className={`flex justify-end transition-[opacity,transform] z-20  lgMax:mt-12 duration-500 transform ${
+            isImageOnScreen
+              ? '!translate-x-0 !opacity-100'
+              : 'translate-x-1/2 opacity-0'
+          }`}
+        >
+          <Image src={HeroGraphics} alt="" />
+        </div>
       </div>
-      <div className="px-5 md:px-10">
+      <div className="px-5 md:px-10 mt-20  md:mt-[5.94rem]">
         <MarqueesSlider speed={50}>
-          <div className="flex items-center ml-10  gap-x-4 md:gap-x-14 mt-16  md:mt-[5.94rem]">
-            <div className="flex items-center gap-x-2.5">
-              <img src="/assets/icons/boldo-logo.svg" alt="boldo icon" />
-              <h1 className="text-primary font-bold text-3xl font-manrope">
-                Boldo
-              </h1>
-            </div>
-            <div className="flex items-center gap-x-2.5">
-              <img src="/assets/icons/presto-logo.svg" alt="boldo icon" />
-              <h1 className="text-primary font-bold text-[2rem] font-work-sans">
-                Presto
-              </h1>
-            </div>
-            <div className="flex items-center gap-x-2.5">
-              <img src="/assets/icons/boldo-logo.svg" alt="boldo icon" />
-              <h1 className="text-primary font-bold text-3xl font-manrope">
-                Boldo
-              </h1>
-            </div>
-            <div className="flex items-center gap-x-2.5">
-              <img src="/assets/icons/presto-logo.svg" alt="boldo icon" />
-              <h1 className="text-primary font-bold text-[2rem] font-work-sans">
-                Presto
-              </h1>
-            </div>
-            <div className="flex items-center gap-x-2.5">
-              <img src="/assets/icons/boldo-logo.svg" alt="boldo icon" />
-              <h1 className="text-primary font-bold text-3xl font-manrope">
-                Boldo
-              </h1>
-            </div>
-            <div className="flex items-center gap-x-2.5">
-              <img src="/assets/icons/presto-logo.svg" alt="boldo icon" />
-              <h1 className="text-primary font-bold text-[2rem] font-work-sans">
-                Presto
-              </h1>
-            </div>
-            <div className="flex items-center gap-x-2.5">
-              <img src="/assets/icons/boldo-logo.svg" alt="boldo icon" />
-              <h1 className="text-primary font-bold text-3xl font-manrope">
-                Boldo
-              </h1>
-            </div>
-            <div className="flex items-center gap-x-2.5">
-              <img src="/assets/icons/presto-logo.svg" alt="boldo icon" />
-              <h1 className="text-primary font-bold text-[2rem] font-work-sans">
-                Presto
-              </h1>
-            </div>
+          <div className="flex items-center ml-10 overflow-y-hidden  gap-x-4 md:gap-x-14 ">
+            {TRUSTEES.map((item) => (
+              <div className="flex items-center gap-x-2.5">
+                <Image src={item.logo} alt="" />
+                <h1 className="text-primary font-bold text-3xl font-manrope">
+                  {item.name}
+                </h1>
+              </div>
+            ))}
           </div>
         </MarqueesSlider>
       </div>

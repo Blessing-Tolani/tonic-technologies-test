@@ -41,7 +41,7 @@ export default function OurServices() {
               <span className="font-bold font-open-sans xl:text-xl">
                 Explore page
               </span>
-              <IoArrowForward size={23} className="mt-1" />
+              <IoArrowForward size={23} className="mt-1 arrow-right" />
             </Link>
           </div>
         ))}

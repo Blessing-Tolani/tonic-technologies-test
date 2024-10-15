@@ -2,15 +2,18 @@ import FilledButton from '@/components/common/buttons/filled'
 import { IoIosCheckmarkCircle } from 'react-icons/io'
 import { FiFeather, FiEye, FiSun } from 'react-icons/fi'
 import EnterpriseTemplates from '../templates'
+import Image from 'next/image'
+import WhatWeDo1 from '/public/assets/images/services/what-we-do-image1.png'
+import WhatWeDo2 from '/public/assets/images/services/what-we-do-image2.png'
 
 export default function WhatWeDo() {
   return (
     <section>
       <section className="py-16  md:py-[7.5rem]  px-6 md:px-10 xl:px-20  2xl:px-[12.95rem] space-y-20">
         <div className="flex mdMax:flex-col w-full gap-x-10 xl:gap-x-40 items-center ">
-          <img
-            src="/assets/images/services/what-we-do-image1.png"
+          <Image
             alt=""
+            src={WhatWeDo1}
             className="w-full md:w-[20rem] lg:w-[30.8rem] "
           />
           <div className="xl:w-[40%] ">
@@ -65,9 +68,9 @@ export default function WhatWeDo() {
               </div>
             </div>
           </div>
-          <img
-            src="/assets/images/services/what-we-do-image2.png"
+          <Image
             alt=""
+            src={WhatWeDo2}
             className="w-full md:w-[20rem] mdMax:order-1 lg:w-[30.8rem] "
           />
         </div>

@@ -2,6 +2,8 @@
 import { FAQS } from '@/constants'
 import { useState } from 'react'
 import { IoIosArrowDropdownCircle } from 'react-icons/io'
+import Image from 'next/image'
+import MenWorking from '/public/assets/images/services/men-working.png'
 
 const FaqToggle = ({
   faqs,
@@ -53,7 +55,7 @@ export default function Faqs() {
 
   return (
     <section className="py-16  md:py-[7.5rem]  px-6 md:px-10 xl:px-20  2xl:px-[12.95rem] space-y-6 md:space-y-14">
-      <img src="/assets/images/services/men-working.png" alt="" />
+      <Image alt="" src={MenWorking} />
       <div className="flex  lgMax:flex-col  justify-between mdMax:space-y-2 ">
         <p className="font-manrope text-xl h-fit  xl:text-4xl xl:leading-[3.5rem] lg:w-[20rem] xl:w-[30rem]">
           We connect our customers with the best, and help them keep up-and stay

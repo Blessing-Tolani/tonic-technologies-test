@@ -1,9 +1,12 @@
+import Image from 'next/image'
+import DarkEllipse from '/public/assets/images/dark-ellipse.png'
+
 export default function CallToAction() {
   return (
     <section className=" px-6 md:px-10 xl:px-20  2xl:px-[12.95rem] my-20 md:my-[7.75rem] ">
       <div className="bg-primary relative py-[4.5rem] rounded-lg">
-        <img
-          src="/assets/images/dark-ellipse.png"
+        <Image
+          src={DarkEllipse}
           alt=""
           className="absolute top-0 right-0 z-10 "
         />
