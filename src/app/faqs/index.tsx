@@ -4,16 +4,16 @@ import { useState } from 'react'
 import { IoIosArrowDropdownCircle } from 'react-icons/io'
 
 const FaqToggle = ({
-  faqButtons,
+  faqs,
   display,
   toggle,
 }: {
-  faqButtons: any
+  faqs: { id: number; name: string; details: JSX.Element }[]
   display: null | number
   toggle: (value: number) => void
 }) => (
   <ul className="lg:w-[30rem] xl:w-[31.25rem]">
-    {faqButtons.map((item: { name: string; details: string; id: number }) => (
+    {faqs.map((item: { name: string; details: JSX.Element; id: number }) => (
       <li
         key={item.id}
         className="flex  flex-col  justify-center md:my-4 cursor-pointer"
@@ -59,7 +59,7 @@ export default function Faqs() {
           We connect our customers with the best, and help them keep up-and stay
           open.
         </p>
-        <FaqToggle faqButtons={FAQS} display={display} toggle={toggleDisplay} />
+        <FaqToggle faqs={FAQS} display={display} toggle={toggleDisplay} />
       </div>
     </section>
   )
