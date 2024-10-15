@@ -1,19 +1,13 @@
-'use client'
 import FilledButton from '@/components/common/buttons/filled'
 import OutlinedButton from '@/components/common/buttons/outlined'
 import Header from '@/components/layout/header'
 import MarqueesSlider from '@/components/marquee-slider'
-import useIntersectionObserver from '@/utils'
-import { useRef } from 'react'
 import HeroGraphics from '/public/assets/images/hero-section/hero-graphics.png'
 import Image from 'next/image'
 import { TRUSTEES } from '@/constants'
 import Ellipse from '/public/assets/images/hero-section/ellipse.png'
 
 export default function HeroSection() {
-  const ref = useRef<HTMLDivElement>(null)
-  const { hasAppeared: isImageOnScreen } = useIntersectionObserver(ref, 0.25)
-
   return (
     <section className="bg-white relative px-6 md:px-10  pb-20  lg:px-[6.25rem]">
       <Image
@@ -43,16 +37,7 @@ export default function HeroSection() {
             />
           </div>
         </div>
-        <div
-          ref={ref}
-          className={`flex justify-end transition-[opacity,transform] z-20  lgMax:mt-12 duration-500 transform ${
-            isImageOnScreen
-              ? '!translate-x-0 !opacity-100'
-              : 'translate-x-1/2 opacity-0'
-          }`}
-        >
-          <Image src={HeroGraphics} alt="" />
-        </div>
+        <Image src={HeroGraphics} alt="" className="z-20  lgMax:mt-12" />
       </div>
       <div className="px-5 md:px-10 mt-20  md:mt-[5.94rem]">
         <MarqueesSlider speed={50}>
